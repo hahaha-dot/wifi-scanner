@@ -14,7 +14,7 @@ startport = int(sys.argv[2])
 endport = int(sys.argv[3])
 print("Scanning" + target + "for its open TCP port")
 
-if startport=endport
+if startport = endport:
    endport+=1
 
 for x in range(startport,endport):
