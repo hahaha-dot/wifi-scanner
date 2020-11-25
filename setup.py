@@ -1,28 +1,50 @@
 #Use it legally
 #Don't use for illegal activities
+#! /usr/bin/env python3
 
-import logging
-logging.getlogger("scapy.runtime").setLevel("logging.ERROR")
+import pyfiglet
 import sys
-
-if len(sys.argv) !=4 :
-   print("Usage: %s target startport endport" % sys.argv[0])
-   sys.exit(0)
+import time
    
-target = str(sys.argv[1])
-startport = int(sys.argv[2])
-endport = int(sys.argv[3])
-print("Scanning" + target + "for its open TCP port")
+result = pyfiglet.figlet_format("Port-Scanner", font = "slant"  ) 
+print(result)
+x = "WRITTEN BY WONG SOON HONG"
+slowprint(x)
+timesleep(1)
+sys.stdout.flush()
+print("WELCOME", end='\n')
+print("Please choose option you want", end='\n')
+print("[1] Open port scanner", end='\n')
+print("[2] Exit", end='\n')
+input = input(int("==>\n"))
+if input == 1:
+   print("Success to run")
+else: 
+   sys.exit(0)
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+print(input("Enter format you want to scan", end='\n'))
+special = print("Enter the ip address of target's that you comfirmed")
+print("[2] Enter a file that contain ip address to scan")
+selection = input(int("==>")
+   if selection == 2
+      path = input("Enter the file location")
+   else:
+      pass
+real = open(path,'r')
+really = real.readlines()
+new = input(int("Enter port to scan"))
+   for port in range(1,1025): 
+      result = sock.connect_ex((special,new))
+        if result == 0:
+            print "Port {}: 	 Open".format(port)
+        sock.close()
 
-if startport = endport:
-   endport+=1
+except KeyboardInterrupt:
+    print "You pressed Ctrl+C"
+    sys.exit()
 
-for x in range(startport,endport):
-   packet = IP(dst=target)/TCP(dport=x,flags='S')
-   response = sr1(packet,timeout=0.5,verbose=0)
-   if response.haslayer(TCP) and response.getlayer(TCP).flag==0x12
-      print('Port ' + str(x) +' is openl')
-  sr(IP(dst=target))/TCP(dport=response.sport,flag='R'),timeout=0.5,verbose=0
-  
-print("Scan is complet\n")
-    
+except socket.gaierror:
+    print 'Hostname could not be resolved. Exiting'
+    sys.exit()
+                  
+                  
