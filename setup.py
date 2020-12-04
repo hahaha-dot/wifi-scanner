@@ -1,15 +1,14 @@
-import os
-import subprocess
-from subprocess import PIPE, Popen
+import re
 
-try:
-   proc = Popen(['iwconfig'], stdout=PIPE, stderr=subprocess.STDOUT)
-except OSError:
-   sys.exit(1)
-hello = proc.communicate()[0]
-for line in hello:
-   yes = line.split('\n')
-   if len(line) => 1:
-      print("len(line) => 1")
-   else:
-      print("len(line) < 1")
+def hello():
+    with open('/home/kali/Desktop/list.txt', 'r') as f:
+        re.compile('\s+')
+        
+        f_content = f.read()
+        repair = f_content.replace(' ', '').split()
+        if len(repair) >= 8:
+              print(repair)
+        else:
+              continue
+        
+hello()
